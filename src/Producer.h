@@ -1,11 +1,11 @@
 #ifndef PRODUCER_H
 #define PRODUCER_H
 
-struct producer {
+#include <stdlib.h>
+#include <stdio.h>
 
-    /* These two functions are needed for the producer/consumer structure  */
-    void (*produce)(void);
-    void (*wait)(void);
+struct producer {
+    void (*produce)(void); // Will write to the file
 };
 
 extern const struct producer Producer;
