@@ -2,8 +2,6 @@
 #define __CONSUMER
 
 struct consumerP {
-	pid_t pid;
-
 	void (*consumer)(void);
 };
 
