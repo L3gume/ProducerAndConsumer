@@ -1,29 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include Consumer.h
+#include "Consumer.h"
 
 void consumer(void) {
 
-	FILE *turn;
-	FILE *data;
+	FILE *TURN;
+	FILE *DATA;
 	char fromFile;
 	while(1) {
 		//if turn is 1
 		//read item in data, set turn to 0
 
-		turn = fopen("../data/turn.txt", "r+");
+		while ((TURN = fopen("../data/turn.txt", "r+")) == NULL);
+			//can't open file until producer is done using it
 
-		if(atoi (getc(turn)) ) {	//if turn is not 0
+		if( fgetc(TURN) ) {	//if turn is not 0
 			//turn is 1, consumer's turn to read data
-			data = fopen("../data/turn.txt", "r");
-			fromFile = getc(data);
+			DATA = fopen("../data/turn.txt", "r");
+			fromFile = getc(DATA);
 			putc(fromFile, stdout);	//append char to stdout stream
-			fclose(data);
-			rewind(turn);
-			putc("0", turn);
+			fclose(DATA);
+			rewind(TURN);
+			putc("0", TURN);
 		}
-		fclose(turn);
+		fclose(TURN);
 	}
 }
 
