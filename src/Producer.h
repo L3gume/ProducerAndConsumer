@@ -4,10 +4,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct producer {
-    void (*produce)(void); // Will write to the file
+struct producer_t {
+    void (*producer)(void); // Will write to the file
 };
 
-extern const struct producer Producer;
+extern const struct producer_t Producer;
 
 #endif
