@@ -9,12 +9,12 @@ void consumer(void) {
 	FILE *DATA;
 	char from_file;
 
-    while ((TURN = fopen("../data/turn.txt", "r+")) == NULL);
+    while ((TURN = fopen("./TURN.txt", "r+")) == NULL);
         //can't open file until producer is done using it
 
     if('0' != fgetc(TURN)) {	//if turn is not 0
         //turn is 1, consumer's turn to read data
-        DATA = fopen("../data/data.txt", "r");
+        DATA = fopen("./DATA.txt", "r");
         from_file = fgetc(DATA);
         putc(from_file, stdout);
         fclose(DATA);

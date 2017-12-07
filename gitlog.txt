@@ -1,0 +1,79 @@
+commit 606a34643cf297a39621c64798e02d487b4d8eca
+Author: l3gume <justin.tremblay@mail.mcgill.ca>
+Date:   Wed Dec 6 21:50:11 2017 -0500
+
+    Merged the two parts together and added mydata.txt
+
+commit 7bbe1fa550d531fd8a6509f70c0a8e7297dc2a5c
+Author: l3gume <justin.tremblay@mail.mcgill.ca>
+Date:   Wed Dec 6 19:19:38 2017 -0500
+
+    added some comments and exit condition in the main function
+
+commit bee7e64e71fa51d276da0385114f8d42796c24aa
+Merge: ee2cf74 6408312
+Author: aidssmcc <aidan.sullivan25@gmail.com>
+Date:   Wed Dec 6 13:45:18 2017 -0500
+
+    Merge branch 'master' of https://github.com/MrL3gume/COMP206Assignement6
+
+commit ee2cf74b71378e27f2967f0ec092124bab74f219
+Author: aidssmcc <aidan.sullivan25@gmail.com>
+Date:   Wed Dec 6 13:44:39 2017 -0500
+
+    Fixed a few bugs
+
+commit 6408312fd9f87702bc1a5b1961bdeefc356367a6
+Author: l3gume <justin.tremblay@mail.mcgill.ca>
+Date:   Tue Dec 5 20:00:45 2017 -0500
+
+    Implemented producer and main function
+
+commit d7a933d6863ded29ae744b28809f2069ad3c354c
+Merge: 1723267 698188f
+Author: l3gume <justin.tremblay@mail.mcgill.ca>
+Date:   Tue Dec 5 19:35:43 2017 -0500
+
+    Merge branch 'master' into feature-producer
+
+commit 1723267cc11d06278fbadb4956ab70090d06201e
+Author: MrL3gume <justin.tremblay@mail.mcgill.ca>
+Date:   Tue Dec 5 15:52:17 2017 -0500
+
+    Started working on Poducer implementation.
+
+commit 698188f1bc7bf151843472e381ea2908c7f634a0
+Author: aidssmcc <aidan.sullivan25@gmail.com>
+Date:   Mon Dec 4 21:41:35 2017 -0500
+
+    Updated consumer.h
+
+commit 21e09c2200fcb7740b006ebaa35221d4a51f920c
+Author: aidssmcc <aidan.sullivan25@gmail.com>
+Date:   Mon Dec 4 20:32:06 2017 -0500
+
+    Added content to the consumer.c/.h files
+
+commit 9e43088ea82bcdad5a8622bbfe50c33e7bc54f0e
+Author: aidssmcc <aidan.sullivan25@gmail.com>
+Date:   Mon Dec 4 15:23:42 2017 -0500
+
+    Added files to write data to
+
+commit e20de87f8e8ba73a57f3217d7da92cde9e1fd5e6
+Author: MrL3gume <justin.tremblay@mail.mcgill.ca>
+Date:   Mon Dec 4 15:02:07 2017 -0500
+
+    Started work on producer code on feature-producer branch
+
+commit 76dfa82165715b9d91d660cace090882740b9cdc
+Author: MrL3gume <justin.tremblay@mail.mcgill.ca>
+Date:   Mon Dec 4 14:55:26 2017 -0500
+
+    Added project structure
+
+commit 541dcc9d33ea90c988902ae0bed6e8f3ac0ce782
+Author: Justin Tremblay <MrL3gume@users.noreply.github.com>
+Date:   Mon Dec 4 14:45:29 2017 -0500
+
+    Initial commit

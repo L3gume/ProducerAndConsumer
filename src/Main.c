@@ -24,7 +24,5 @@ int main(void) {
         }
     }
 
-    // TODO: guarantee that exiting from the producer process actually exits the whole program
-
     return 0;
 }

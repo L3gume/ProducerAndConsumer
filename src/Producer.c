@@ -14,13 +14,13 @@ void producer(void) {
     static int pos = 0; // Keep track of the position in the mydata.txt file,
                         // making this static makes it persistent when leaving the scope of the function
 
-    while ((TURN = fopen("../data/turn.txt", "r+")) == NULL); // Wait for access to the file
+    while ((TURN = fopen("./TURN.txt", "r+")) == NULL); // Wait for access to the file
 
     if ('0' == fgetc(TURN)) {
-        while ((DATA = fopen("../data/data.txt", "r+")) == NULL);
+        while ((DATA = fopen("./DATA.txt", "r+")) == NULL);
 
         /* Open the mydata.txt file, read a character and put in into data.txt  */
-        MY_DATA = fopen("../data/mydata.txt", "r"); // Open in read mode
+        MY_DATA = fopen("./mydata.txt", "r"); // Open in read mode
         fseek(MY_DATA, (long)pos++, SEEK_SET); // Go to the right position
 
         int c = fgetc(MY_DATA); // Get the next character from the file
