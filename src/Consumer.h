@@ -1,10 +1,10 @@
-#ifndef __CONSUMER
-#define __CONSUMER
+#ifndef CONSUMER_H
+#define CONSUMER_H
 
-struct consumerP {
+struct consumer_t {
 	void (*consumer)(void);
 };
 
-extern const struct consumerP Consumer;
+extern const struct consumer_t Consumer;
 
 #endif

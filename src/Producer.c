@@ -1,27 +1,44 @@
 #include "Producer.h"
 
+/*
+ * Producer function
+ *
+ * Reads from the mydata.txt file and gives it to the consumer via the data.txt file
+ */
 void producer(void) {
-    // TODO
 
+    FILE *MY_DATA;
     FILE *TURN;
     FILE *DATA;
 
+    static int pos = 0; // Keep track of the position in the mydata.txt file,
+                        // making this static makes it persistent when leaving the scope of the function
+
     while ((TURN = fopen("../data/turn.txt", "r+")) == NULL); // Wait for access to the file
 
-    int _turn = fgetc(TURN); // get the first character of the turn.txt file.
+    if ('0' == fgetc(TURN)) {
+        while ((DATA = fopen("../data/data.txt", "r+")) == NULL);
 
-    /* We only want to do stuff if _turn IS 0  */
-    if (!_turn) {
-        char c = getchar();
-        if (c != 0x00) {
-            while ((DATA = fopen("../data/data.txt", "w")) == NULL); // Opened with w since we don't care about overwriting it
-            fputc((int)c, DATA);
-            fputc(0x00, TURN);
-            fclose(DATA);
-        } else {
-            exit(0); // we're done here
+        /* Open the mydata.txt file, read a character and put in into data.txt  */
+        MY_DATA = fopen("../data/mydata.txt", "r"); // Open in read mode
+        fseek(MY_DATA, (long)pos++, SEEK_SET); // Go to the right position
+
+        int c = fgetc(MY_DATA); // Get the next character from the file
+        if (feof(MY_DATA)) {
+            // We reached the end of the file, terminated the process
+            exit(0);
         }
+        fputc(c, DATA); // Write the character in the data.txt file
+
+        /* Close the files so that the consumer will be able to access them */
+        fclose(MY_DATA);
+        fclose(DATA);
+
+        /* Rewind for safety and then set turn */
+        rewind(TURN);
+        fputc('1', TURN);
     }
+    /* Close the turn.txt file, signifying we are done with it */
     fclose(TURN);
 }
 

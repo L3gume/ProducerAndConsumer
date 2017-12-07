@@ -7,27 +7,24 @@ void consumer(void) {
 
 	FILE *TURN;
 	FILE *DATA;
-	char fromFile;
-	while(1) {
-		//if turn is 1
-		//read item in data, set turn to 0
+	char from_file;
 
-		while ((TURN = fopen("../data/turn.txt", "r+")) == NULL);
-			//can't open file until producer is done using it
+    while ((TURN = fopen("../data/turn.txt", "r+")) == NULL);
+        //can't open file until producer is done using it
 
-		if( fgetc(TURN) ) {	//if turn is not 0
-			//turn is 1, consumer's turn to read data
-			DATA = fopen("../data/turn.txt", "r");
-			fromFile = getc(DATA);
-			putc(fromFile, stdout);	//append char to stdout stream
-			fclose(DATA);
-			rewind(TURN);
-			putc("0", TURN);
-		}
-		fclose(TURN);
-	}
+    if('0' != fgetc(TURN)) {	//if turn is not 0
+        //turn is 1, consumer's turn to read data
+        DATA = fopen("../data/data.txt", "r");
+        from_file = fgetc(DATA);
+        putc(from_file, stdout);
+        fclose(DATA);
+        rewind(TURN);
+        fputc('0', TURN);
+    }
+
+    fclose(TURN);
 }
 
-const struct consumerP Consumer = {
+const struct consumer_t Consumer = {
     .consumer = consumer
 };
