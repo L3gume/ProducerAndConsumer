@@ -13,7 +13,14 @@ int main(void) {
         if (pid != 0) {
             Consumer.consumer();
         }
+        if (pid == -1) {
+            // That's a problem, notify the user and exit
+            printf("Error: invalid PID\n");
+            exit(1);
+        }
     }
+
+    // TODO: guarantee that exiting from the producer process actually exits the whole program
 
     return 0;
 }

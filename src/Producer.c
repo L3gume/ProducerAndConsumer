@@ -25,6 +25,7 @@ void producer(void) {
     fclose(TURN);
 }
 
+// Use the designated initializer to make the function pointer point to the actual implementation of the producer function
 const struct producer_t Producer = {
     .producer = producer
 };
